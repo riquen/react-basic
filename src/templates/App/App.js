@@ -1,7 +1,7 @@
 import logo from '../../logo.svg';
 import './App.css';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 
 function App() {
   const [reverse, setReverse] = useState(false);

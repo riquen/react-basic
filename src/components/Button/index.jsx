@@ -1,6 +1,6 @@
 import P from 'prop-types';
 
-export const Button = ({ type, children, onClick }) => {
+const Button = ({ type, children, onClick }) => {
   return (
     <button type={type} onClick={onClick}>
       {children}
@@ -13,3 +13,5 @@ Button.propTypes = {
   children: P.string.isRequired,
   onClick: P.func.isRequired,
 };
+
+export default Button;
