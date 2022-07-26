@@ -1,9 +1,9 @@
 import P from 'prop-types';
 
-const Post = ({ post }) => {
+const Post = ({ post, onClick }) => {
   return (
     <div>
-      <h1>{post.title}</h1>
+      <h1 onClick={() => onClick(post.title)}>{post.title}</h1>
       <p>{post.body}</p>
     </div>
   );
@@ -14,6 +14,7 @@ Post.propTypes = {
     title: P.string.isRequired,
     body: P.string.isRequired,
   }),
+  onClick: P.func,
 };
 
 export default Post;
