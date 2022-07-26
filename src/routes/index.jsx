@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Home from '../templates/Home/Home';
 import App from '../templates/App/App';
 import Menu from '../components/Menu';
 import Posts from '../templates/Posts';
@@ -8,12 +9,14 @@ const MainRoutes = () => {
     <BrowserRouter>
       <Menu>
         <>
-          <Link to="/">Home</Link>
+          <Link to="/">App</Link>
+          <Link to="/home">Home</Link>
           <Link to="/posts">Posts</Link>
         </>
       </Menu>
       <Routes>
         <Route index path="/" element={<App />} />
+        <Route exact path="/home" element={<Home />} />
         <Route exact path="/posts" element={<Posts />} />
       </Routes>
     </BrowserRouter>

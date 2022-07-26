@@ -1,9 +1,9 @@
 import logo from '../../logo.svg';
-import './App.css';
+import './Home.css';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Button from '../../components/Button';
 
-function App() {
+function Home() {
   const [reverse, setReverse] = useState(false);
   const [counter, setCounter] = useState(0);
   const [reverseClass, setReverseClass] = useState('');
@@ -33,13 +33,13 @@ function App() {
   }, [handleIncrement]);
 
   useEffect(() => {
-    reverse ? setReverseClass('App-logo-reverse') : setReverseClass('');
+    reverse ? setReverseClass('Home-logo-reverse') : setReverseClass('');
   }, [reverse]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className={`App-logo ${reverseClass}`} alt="logo" />
+    <div className="Home">
+      <header className="Home-header">
+        <img src={logo} className={`Home-logo ${reverseClass}`} alt="logo" />
 
         <h1>Counter: {counter}</h1>
 
@@ -51,4 +51,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
