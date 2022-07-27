@@ -1,16 +1,29 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { GlobalContext } from '../../contexts/AppContext';
+import actions from '../../store/actions';
 
 const P = () => {
+  const inputRef = useRef();
   const context = useContext(GlobalContext);
   const {
-    state: { body },
-    setState,
+    state: { body, counter },
+    dispatch,
   } = context;
+
   return (
-    <p onClick={() => setState((s) => ({ ...s, counter: s.counter + 1 }))}>
-      {body}
-    </p>
+    <>
+      <p
+        onClick={() =>
+          dispatch({
+            type: actions.INCREMENT_COUNTER,
+            payload: { counter: counter, value: inputRef.current.value },
+          })
+        }
+      >
+        {body}
+      </p>
+      <input ref={inputRef} type="text" />
+    </>
   );
 };
 
