@@ -1,16 +1,11 @@
-import { useContext } from 'react';
-import { GlobalContext } from '../../contexts/AppContext';
+import P from 'prop-types';
 
-const H1 = () => {
-  const context = useContext(GlobalContext);
-  const {
-    state: { title, counter },
-  } = context;
-  return (
-    <h1>
-      {title} {counter}
-    </h1>
-  );
+const H1 = ({ children }) => {
+  return <h1>{children}</h1>;
+};
+
+H1.propTypes = {
+  children: P.oneOfType([P.array, P.string]),
 };
 
 export default H1;

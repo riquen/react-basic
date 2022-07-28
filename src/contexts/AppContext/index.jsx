@@ -1,9 +1,8 @@
-import { createContext, useReducer } from 'react';
+import { useReducer } from 'react';
 import globalState from './data';
 import P from 'prop-types';
 import reducer from '../../store/reducers';
-
-export const GlobalContext = createContext();
+import GlobalContext from './context';
 
 const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, globalState);
@@ -15,7 +14,7 @@ const AppContext = ({ children }) => {
 };
 
 AppContext.propTypes = {
-  children: P.element,
+  children: P.element.isRequired,
 };
 
 export default AppContext;

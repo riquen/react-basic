@@ -1,13 +1,11 @@
-import H1 from '../H1';
-import P from '../P';
+import P from 'prop-types';
 
-const Div = () => {
-  return (
-    <>
-      <H1 />
-      <P />
-    </>
-  );
+const Div = ({ children }) => {
+  return <div>{children} </div>;
+};
+
+Div.propTypes = {
+  children: P.node.isRequired,
 };
 
 export default Div;

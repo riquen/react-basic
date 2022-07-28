@@ -5,6 +5,7 @@ import Menu from '../components/Menu';
 import Posts from '../templates/Posts';
 import Page from '../templates/Page';
 import MyHook from '../templates/MyHook';
+import AppContext from '../contexts/AppContext';
 
 const MainRoutes = () => {
   return (
@@ -18,13 +19,15 @@ const MainRoutes = () => {
           <Link to="/my-hook">My Hook</Link>
         </>
       </Menu>
-      <Routes>
-        <Route index path="/" element={<App />} />
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/posts" element={<Posts />} />
-        <Route exact path="/page" element={<Page />} />
-        <Route exact path="/my-hook" element={<MyHook />} />
-      </Routes>
+      <AppContext>
+        <Routes>
+          <Route index path="/" element={<App />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/posts" element={<Posts />} />
+          <Route exact path="/page" element={<Page />} />
+          <Route exact path="/my-hook" element={<MyHook />} />
+        </Routes>
+      </AppContext>
     </BrowserRouter>
   );
 };
