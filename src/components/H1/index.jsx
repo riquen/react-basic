@@ -5,7 +5,7 @@ const H1 = ({ children }) => {
 };
 
 H1.propTypes = {
-  children: P.oneOfType([P.array, P.string]),
+  children: P.oneOfType([P.array, P.string]).isRequired,
 };
 
 export default H1;
