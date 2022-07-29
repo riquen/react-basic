@@ -2,7 +2,7 @@ import { createRef, useContext } from 'react';
 import Div from '../../components/Div';
 import H1 from '../../components/H1';
 import Input from '../../components/Input';
-import Paragraph from '../../components/P';
+import Paragraph from '../../components/Paragraph';
 import AppContext from '../../contexts/AppContext';
 import GlobalContext from '../../contexts/AppContext/context';
 import actions from '../../store/actions';

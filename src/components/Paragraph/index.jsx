@@ -5,8 +5,8 @@ const Paragraph = ({ children, onClick }) => {
 };
 
 Paragraph.propTypes = {
-  children: P.string.isRequired,
-  onClick: P.func.isRequired,
+  children: P.node.isRequired,
+  onClick: P.func,
 };
 
 export default Paragraph;

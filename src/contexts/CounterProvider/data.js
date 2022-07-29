@@ -1,6 +1,5 @@
 const data = {
-  posts: [],
-  loading: false,
+  counter: 0,
 };
 
 export default data;

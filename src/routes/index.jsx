@@ -7,6 +7,8 @@ import Page from '../templates/Page';
 import MyHook from '../templates/MyHook';
 import AppContext from '../contexts/AppContext';
 import Separate from '../templates/Separate';
+import PostsProvider from '../contexts/PostsProvider';
+import CounterProvider from '../contexts/CounterProvider';
 
 const MainRoutes = () => {
   return (
@@ -22,14 +24,18 @@ const MainRoutes = () => {
         </>
       </Menu>
       <AppContext>
-        <Routes>
-          <Route index path="/" element={<App />} />
-          <Route exact path="/home" element={<Home />} />
-          <Route exact path="/posts" element={<Posts />} />
-          <Route exact path="/page" element={<Page />} />
-          <Route exact path="/my-hook" element={<MyHook />} />
-          <Route exact path="/separate" element={<Separate />} />
-        </Routes>
+        <PostsProvider>
+          <CounterProvider>
+            <Routes>
+              <Route index path="/" element={<App />} />
+              <Route exact path="/home" element={<Home />} />
+              <Route exact path="/posts" element={<Posts />} />
+              <Route exact path="/page" element={<Page />} />
+              <Route exact path="/my-hook" element={<MyHook />} />
+              <Route exact path="/separate" element={<Separate />} />
+            </Routes>
+          </CounterProvider>
+        </PostsProvider>
       </AppContext>
     </BrowserRouter>
   );
